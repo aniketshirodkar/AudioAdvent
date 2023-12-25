@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Spotify Playlist Generator</title>
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <nav class="navbar">
+      <ul>
+         <li><a href="index.html">Home</a></li>
+         <li><a href="saved.html">Saved Tracks</a></li>
+         <li><a href="recommendations.html">Recommended Tracks</a></li>
+      </ul>
+   </nav>
+   <div class="container">
+      <h1>Spotify Playlist Generator</h1>
+      <div class="form-container">
+         <div class="input-container">
+            <label for="search-input">Enter your preferences:</label>
+            <input type="text" id="search-input" placeholder="e.g., mood, genre">
+            <button type="button" onclick="generatePlaylist()">Generate Playlist</button>
+         </div>
+      </div>
+      <div id="playlist-results" class="playlist-results"></div>
+   </div>
+   <script src="script.js"></script>
+</body>
+</html>
