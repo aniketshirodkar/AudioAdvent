@@ -20,8 +20,8 @@ This web application recommends songs for users based on their favorite tracks.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/spotify-playlist-generator.git
-
+   git clone https://github.com/aniketshirodkar/AudioAdvent.git
+   
 2. **Obtain Spotify API credentials:**
    - Create a [Spotify Developer account](https://developer.spotify.com/) and create a new application.
    - Replace `clientId` and `clientSecret` in `saved.js` and `script.js` with your own credentials.
