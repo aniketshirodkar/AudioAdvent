@@ -6,11 +6,10 @@ This web application recommends songs for users based on their favorite tracks.
 
 - **Home Page (`index.html`):**
   - Search, preview, and save tracks.
-  - Generate recommendations dynamically using the Spotify API.
 
 - **Saved Tracks Page (`saved.html`):**
   - View and manage saved tracks.
-  - Generate recommendations based on saved tracks.
+  - Generate recommendations dynamically using the Spotify API.
 
 - **Recommended Tracks Page (`recommendations.html`):**
   - View recommended tracks based on saved tracks.
