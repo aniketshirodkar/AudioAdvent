@@ -161,7 +161,8 @@ function showSavedTrackDetails(savedTrack) {
    const audioPreview = document.createElement('audio');
    audioPreview.controls = true;
 
-   // Check if preview_url is available before setting it as the source
+   // Check if preview_url is not null before setting the src
+   console.log(savedTrack.preview_url)
    if (savedTrack.preview_url) {
        audioPreview.src = savedTrack.preview_url;
    } else {
@@ -197,6 +198,7 @@ function showSavedTrackDetails(savedTrack) {
 
    document.body.appendChild(modal);
 }
+
 
 function viewOnSpotify(url) {
     // Open the Spotify link in a new tab or window

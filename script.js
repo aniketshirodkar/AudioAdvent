@@ -115,13 +115,14 @@ function generatePlaylist() {
     if (!isAlreadySaved) {
        // Add the track to the savedTracks array
        savedTracks.push({
-        id: track.id,
-        name: track.name,
-        artists: track.artists.map(artist => artist.name).join(', '),
-        album: track.album.name,
-        releaseDate: track.album.release_date,
-        albumArt: track.album.images.length > 0 ? track.album.images[0].url : null,
-     })
+         id: track.id,
+         name: track.name,
+         artists: track.artists.map(artist => artist.name).join(', '),
+         album: track.album.name,
+         releaseDate: track.album.release_date,
+         albumArt: track.album.images.length > 0 ? track.album.images[0].url : null,
+         preview_url: track.preview_url, // Include the preview_url
+     });
  
        // Save the updated savedTracks array to local storage
        localStorage.setItem('savedTracks', JSON.stringify(savedTracks));
