@@ -1,9 +1,42 @@
+let accessToken;
+function getAccessToken(){
+
+   const clientId = '99290df53a324173a5f9f96f5c0634f2';
+   const clientSecret = '1a0f733ffbe442c69928013bfa0f6147';
+
+   // Spotify API endpoint for obtaining an access token
+   const tokenEndpoint = 'https://accounts.spotify.com/api/token';
+
+   // Form data for the request
+   const formData = new URLSearchParams();
+   formData.append('grant_type', 'client_credentials');
+   formData.append('client_id', clientId);
+   formData.append('client_secret', clientSecret);
+
+   // Make a POST request to obtain the access token
+   axios.post(tokenEndpoint, formData, {
+   headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+   },
+   })
+   .then(response => {
+      accessToken = response.data.access_token;
+      // console.log('Access Token:', accessToken);
+
+      // Use the access token in your Spotify API requests
+      // ...
+   })
+   .catch(error => {
+      console.error('Error obtaining access token:', error.response ? error.response.data : error.message);
+   });
+   
+}
+getAccessToken()
+
 function generatePlaylist() {
     const searchInput = document.getElementById('search-input').value;
-    const accessToken = 'BQDjKoJdbPCoQWrxPmnaUfjkknnYIUgjvi1a8XAHy-9s0Ouowd-0CmsHocO2CU5NNQZP7UeEOLfJY_zc_yPKaVr2HMRwrjwa0AGDCvgqaoHCLUhJB-w'; // Replace with the actual access token
- 
     const searchURL = `https://api.spotify.com/v1/search?q=${searchInput}&type=track`;
- // GET /v1/recommendations
+    // console.log(accessToken)
     fetch(searchURL, {
        method: 'GET',
        headers: {
